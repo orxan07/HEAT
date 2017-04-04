@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Graph</title>
+
+	<!-- SCROLLS -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,400,300" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/bower/ngprogress/ngProgress.css">
+
+	<!--Plotly lib-->
+	<script src="/scripts/jquery/dist/jquery.min.js"></script>
+
+
+	<!--jQuery lib-->
+	<script src="/scripts/plotly.js/dist/plotly.min.js"></script>
+
+	<!--Custom CSS-->
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+
+
+	<!-- AngularJS lib -->
+	<script src="/scripts/angular/angular.min.js"></script>
+	<script src="/scripts/angular-resource/angular-resource.min.js"></script>
+	<script src="/scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+	<!-- AngularJS modules -->
+	<script src="js/app.js"></script>
+
+	<!-- AngularJS directives -->
+	<script src="js/directives/latex.js"></script>
+
+	<!-- AngularJS services -->
+	<script src="js/services/apiServ.js"></script>
+
+	<!-- AngularJS controllers -->
+	<script src="js/controllers/heat1/heat.js"></script>
+
+	<!-- Bower packages -->
+	<script src="/bower/ngprogress/build/ngprogress.min.js"></script>
+
+	<!-- MathJax for latex format -->
+	<script src="/scripts/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+	</head>
+<body>
+<div class="page-header">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#/">Graphs by Orxan</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="#"><span class="glyphicon glyphicon-tree-conifer"></span> Test Link</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+</div>
+
+<div class="row">
+	<div class="col-md-3">
+		<ul class="nav nav-tabs nav-stacked" role="tablist">
+			<li role="presentation"><a href="#/heat1"><span class="glyphicon glyphicon-book"></span> Heat-1</a></li>
+		</ul>
+	</div>
+	<div class="col-md-7">
+		<div>
+			<ui-view></ui-view>
+		</div>
+	</div>
+</div>
+</body>
+</html>

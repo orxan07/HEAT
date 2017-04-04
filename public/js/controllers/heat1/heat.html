@@ -1,0 +1,125 @@
+<div ng-controller="saturationExplicitCtrl as vm">
+    <div class="col-md-12">
+        <div class="corner">
+            <h4 align="center">Управление</h4>
+            <br>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Длина области:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.L"></td>
+                </tr>
+                <tr>
+                    <td>Время:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.t"></td>
+                </tr>
+                <tr>
+                    <td>Максимальное число итераций:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.max_it"></td>
+                </tr>
+                <tr>
+                    <td>Число шагов по пространству:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.N"></td>
+                </tr>
+                <tr>
+                    <td>Шаг по времени:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.dt"></td>
+                </tr>
+                <tr>
+                    <td>Минимальный шаг по времени:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.min_dt"></td>
+                </tr>
+                <tr>
+                    <td>Максимальный шаг по времени:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.max_dt"></td>
+                </tr>
+                <tr>
+                    <td>Коэффициент уменьшения шага времени:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.ct"></td>
+                </tr>
+                <tr>
+                    <td>Шаг по пространству:</td>
+                    <td> {{vm.components.h}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="corner">
+            <h4 align="center">Физика</h4>
+            <br>
+            <table id="data" class="table table-condensed">
+
+                <tr>
+                    <td>Начальная температура (Т.):</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.T_init"></td>
+                </tr>
+                <tr>
+                    <td>Т. слева:</td>
+
+                    <td><input class="input-large" type="text" ng-model="vm.components.T_L"></td>
+                    <td>
+                        <input type="radio" ng-model="vm.components.kappa_y1" value="0"> 1-го рода <br/>
+                        <input type="radio" ng-model="vm.components.kappa_y1" value="1"> 2-го рода <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Т. справа:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.T_R"></td>
+                    <td>
+                        <input type="radio" ng-model="vm.components.kappa_y2" value="0"> 1-го рода <br/>
+                        <input type="radio" ng-model="vm.components.kappa_y2" value="1"> 2-го рода <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Т. снизу:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.T_D"></td>
+                    <td>
+                        <input type="radio" ng-model="vm.components.kappa_x1" value="0"> 1-го рода <br/>
+                        <input type="radio" ng-model="vm.components.kappa_x1" value="1"> 2-го рода <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Т. сверху:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.T_U"></td>
+                    <td>
+                        <input type="radio" ng-model="vm.components.kappa_x2" value="0"> 1-го рода <br/>
+                        <input type="radio" ng-model="vm.components.kappa_x2" value="1"> 2-го рода <br/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Распределение плотности:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.Rho"></td>
+                </tr>
+                <tr>
+                    <td>Коэф. источника:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.Q"></td>
+                </tr>
+                <tr>
+                    <td>Коэф. теплопроводности:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.kappa"></td>
+                </tr>
+                <tr>
+                    <td>Показатель при источнике:</td>
+                    <td><input class="input-large" type="text" ng-model="vm.components.betta"></td>
+                </tr>
+                <tr>
+                <td>Показатель при коэф.теплопров.::</td>
+                <td><input class="input-large" type="text" ng-model="vm.components.sigma"></td>
+              <tr>
+                    <td></td>
+                    <td>
+                        <input class="btn btn-default" value="Clear" type="submit" ng-click="vm.plotClear('corrector')">
+                        <input class="btn btn-default" value="Draw" type="submit" ng-click="vm.calculate()">
+                        <input class="btn btn-default" value="Скачать" type="submit" ng-click="vm.download('corrector')">
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <div id="corrector" style="width:600px;height:400px;"></div>
+    </div>
+    <div>
+        <div id="tester" style="width:600px;height:400px;"></div>
+    </div>
+</div>

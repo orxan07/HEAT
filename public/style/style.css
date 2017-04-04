@@ -1,0 +1,7 @@
+.corner {
+    border-collapse: separate;
+    border: solid black 1px;
+    border-radius: 8px;
+}
+
+

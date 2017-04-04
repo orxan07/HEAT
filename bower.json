@@ -1,0 +1,25 @@
+{
+  "name": "plotly-bower",
+  "version": "1.0.0",
+  "homepage": "https://github.com/orxan07/Plotly2",
+  "authors": [
+    "orxan07 <orxan@rehimli.info>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngprogress": "~1.1.2",
+    "angular-local-storage": "~0.2.2"
+  }
+}
